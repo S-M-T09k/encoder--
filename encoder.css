@@ -14,10 +14,15 @@ body {
   justify-content: center;
 }
 
+.noSpacing {
+  margin: 0;
+  padding: 0;
+}
+
 .header {
   display: flex;
   width: 100%;
-  height: 8vh;
+  height: 3em;
   padding-left: 0.5rem;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   flex-direction: row;
@@ -34,4 +39,53 @@ body {
 
 .header small {
   padding-top: 1em;
+}
+
+main section {
+  margin-top: 2vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+main section .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.inputArea {
+  display: grid;
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+label[for="input"] {
+  place-self: start;
+  margin-bottom: 0.5rem;
+}
+
+#initialInputArea textarea {
+  justify-self: center;
+  width: 90vw;
+  height: 35vh;
+  resize: vertical;
+}
+
+#keyInputArea {
+  grid-auto-flow: column dense;
+  height: 5vh;
+  align-items: center;
+}
+
+#keyInputArea input {
+  width: 80vw;
+  height: 75%;
+}
+
+#submit {
+  font-size: large;
+  padding: 5px;
 }
