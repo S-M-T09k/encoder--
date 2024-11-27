@@ -16,3 +16,9 @@ function xorEncrypt(input, key) {
 
   return encrypted;
 }
+
+const initialInput = document.querySelector("#input");
+const keyInput = document.querySelector("#key");
+const submitButton = document.querySelector("#submit");
+const output = document.querySelector("#output");
+const copyButton = document.querySelector("#copy");

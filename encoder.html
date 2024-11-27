@@ -17,22 +17,43 @@
       <div class="header">
         <h1>an Encoder</h1>
         <span class="separator"></span>
-        <small>just for us</small>
+        <small>just for us?</small>
       </div>
     </header>
     <main>
       <section>
         <div class="inputArea" id="initialInputArea">
           <label for="input"><h3 class="noSpacing">Input</h3></label>
-          <textarea name="input" id="input" rows="10">copy&paste here</textarea>
+          <textarea
+            name="input"
+            id="input"
+            rows="10"
+            placeholder="type or paste here"
+          ></textarea>
         </div>
 
         <div class="inputArea" id="keyInputArea">
           <label for="key">Key:</label>
-          <input type="text" id="key" />
+          <input type="text" id="key" placeholder="secret key" />
         </div>
 
         <button type="submit" id="submit">Encrypt || Decrypt</button>
+      </section>
+
+      <span id="separator"></span>
+
+      <section>
+        <div class="inputArea" id="outputArea">
+          <label for="output"><h3 class="noSpacing">Output</h3></label>
+          <textarea
+            name="output"
+            id="output"
+            rows="10"
+            placeholder="get result here"
+          ></textarea>
+        </div>
+
+        <button type="button" id="copy">Copy output</button>
       </section>
     </main>
   </body>

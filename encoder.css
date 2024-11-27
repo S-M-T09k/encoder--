@@ -21,7 +21,6 @@ body {
 
 .header {
   display: flex;
-  width: 100%;
   height: 3em;
   padding-left: 0.5rem;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
@@ -60,23 +59,22 @@ main section .container {
   display: grid;
   width: 100%;
   margin-bottom: 1em;
-}
-
-label[for="input"] {
-  place-self: start;
-  margin-bottom: 0.5rem;
+  gap: 0.5em;
 }
 
 #initialInputArea textarea {
-  justify-self: center;
-  width: 90vw;
   height: 35vh;
+}
+
+textarea {
+  justify-self: center;
+  width: 93vw;
   resize: vertical;
 }
 
 #keyInputArea {
   grid-auto-flow: column dense;
-  height: 5vh;
+  height: 2em;
   align-items: center;
 }
 
@@ -88,4 +86,35 @@ label[for="input"] {
 #submit {
   font-size: large;
   padding: 5px;
+  border: solid 1px red;
+  border-radius: 5px;
+  color: red;
+  background-color: #000;
+  cursor: pointer;
+  transition: 1s;
+}
+
+#submit:active {
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px 0;
+  transform: translateY(2px);
+  background-color: #fff;
+  color: #000;
+  border: solid 1px #000;
+  transition: 25ms;
+}
+
+#copy {
+  font-size: 1em;
+  width: max-content;
+}
+
+#separator {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #fff;
+  margin: 0.5em 0;
+  position: fixed;
+  left: 0;
+  overflow-wrap: break-word;
 }
