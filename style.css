@@ -83,7 +83,13 @@ textarea {
   height: 75%;
 }
 
-#submit {
+#buttonsArea {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 1em;
+}
+
+#buttonsArea button {
   font-size: large;
   padding: 5px;
   border: solid 1px red;
@@ -92,9 +98,10 @@ textarea {
   background-color: #000;
   cursor: pointer;
   transition: 1s;
+  width: 50%;
 }
 
-#submit:active {
+#buttonsArea button:active {
   box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px 0;
   transform: translateY(2px);
   background-color: #fff;
@@ -114,7 +121,7 @@ textarea {
   height: 1px;
   background-color: #fff;
   margin: 0.5em 0;
-  position: fixed;
+  position: absolute;
   left: 0;
   overflow-wrap: break-word;
 }

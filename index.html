@@ -4,8 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Encoder</title>
-    <script src="encoder.js" defer></script>
-    <link rel="stylesheet" href="encoder.css" />
+    <script src="./script.js" defer type="module"></script>
+    <!-- <script type="module" src="./XORencryption.js"></script> -->
+    <link rel="stylesheet" href="style.css" />
     <link
       rel="shortcut icon"
       href="./assets/secret-book-svgrepo-com.svg"
@@ -17,7 +18,7 @@
       <div class="header">
         <h1>an Encoder</h1>
         <span class="separator"></span>
-        <small>just for us?</small>
+        <small>just for us</small>
       </div>
     </header>
     <main>
@@ -29,6 +30,7 @@
             id="input"
             rows="10"
             placeholder="type or paste here"
+            required
           ></textarea>
         </div>
 
@@ -37,7 +39,10 @@
           <input type="text" id="key" placeholder="secret key" />
         </div>
 
-        <button type="submit" id="submit">Encrypt || Decrypt</button>
+        <div id="buttonsArea">
+          <button type="submit" id="encrypt">Encrypt</button>
+          <button type="submit" id="decrypt">Decrypt</button>
+        </div>
       </section>
 
       <span id="separator"></span>
