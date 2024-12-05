@@ -8,20 +8,38 @@ function encrypt(message, key) {
   for (let i = 0; i < message.length; i++) {
     const hexCode = message[i].charCodeAt(0).toString(16);
     hexed_msg += hexCode;
-    // console.log(hexCode);
   }
-  console.log("hexed_msg:", hexed_msg);
 
   for (let i = 0; i < key.length; i++) {
     const hexCode = key[i].charCodeAt(0).toString(16);
     hexed_key += hexCode;
-    // console.log(hexCode);
   }
-  console.log("hexed_key:", hexed_key);
 
   encrypted = xorEncrypt(hexed_msg, hexed_key, charset);
 
   return encrypted;
+}
+
+function decrypt(message, key) {
+  let decrypted = "";
+  let hexed_key = "";
+
+  if (!isHexadecimal(message)) {
+    return "invalid message";
+  }
+
+  for (let i = 0; i < key.length; i++) {
+    const hexCode = key[i].charCodeAt(0).toString(16);
+    hexed_key += hexCode;
+  }
+
+  const decrypted_hex = xorEncrypt(message, hexed_key, charset).toString();
+
+  for (let i = 0; i < decrypted_hex.length; i += 2) {
+    decrypted += String.fromCharCode(parseInt(decrypted_hex.substr(i, 2), 16));
+  }
+
+  return decrypted;
 }
 
 function xorEncrypt(message, key, charset) {
@@ -40,4 +58,4 @@ function xorEncrypt(message, key, charset) {
 
 const isHexadecimal = (str) => /^[A-F0-9]+$/i.test(str);
 
-export { encrypt };
+export { encrypt, decrypt };

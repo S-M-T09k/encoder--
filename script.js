@@ -1,4 +1,4 @@
-//TODO import { encrypt, decrypt } from "./encryption.js";
+import { encrypt, decrypt } from "./encryption.js";
 
 const initialInput = document.querySelector("#input");
 const keyInput = document.querySelector("#key");
@@ -7,12 +7,26 @@ const decryptButton = document.querySelector("#decrypt");
 const output = document.querySelector("#output");
 const copyButton = document.querySelector("#copy");
 
-encryptButton.addEventListener("click", () => {});
+encryptButton.addEventListener("click", () => {
+  const message = initialInput.value.toString();
+  const key = keyInput.value.toString();
 
-decryptButton.addEventListener("click", () => {});
+  output.value = encrypt(message, key);
+});
+
+decryptButton.addEventListener("click", () => {
+  const message = initialInput.value.toString();
+  const key = keyInput.value.toString();
+
+  output.value = decrypt(message, key);
+});
 
 copyButton.addEventListener("click", () => {
+  output.focus();
   output.select();
-  Clipboard.apply(Selection);
+  output.setSelectionRange(0, 99999);
+
+  navigator.clipboard.writeText(output.value);
+  alert("copied output to clipboard");
   // document.execCommand("copy");
 });
