@@ -7,12 +7,12 @@ function encrypt(message, key) {
 
   for (let i = 0; i < message.length; i++) {
     const hexCode = message[i].charCodeAt(0).toString(16);
-    hexed_msg += hexCode;
+    hexed_msg += hexCode.padStart(2, "0");
   }
 
   for (let i = 0; i < key.length; i++) {
     const hexCode = key[i].charCodeAt(0).toString(16);
-    hexed_key += hexCode;
+    hexed_key += hexCode.padStart(2, "0");
   }
 
   encrypted = xorEncrypt(hexed_msg, hexed_key, charset);
@@ -30,7 +30,7 @@ function decrypt(message, key) {
 
   for (let i = 0; i < key.length; i++) {
     const hexCode = key[i].charCodeAt(0).toString(16);
-    hexed_key += hexCode;
+    hexed_key += hexCode.padStart(2, "0");
   }
 
   const decrypted_hex = xorEncrypt(message, hexed_key, charset).toString();

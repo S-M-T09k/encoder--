@@ -1,4 +1,4 @@
-import { encrypt, decrypt } from "./encryption.js";
+import { encrypt, decrypt } from "./scripts/encryption.js";
 
 const initialInput = document.querySelector("#input");
 const keyInput = document.querySelector("#key");
@@ -27,6 +27,6 @@ copyButton.addEventListener("click", () => {
   output.setSelectionRange(0, 99999);
 
   navigator.clipboard.writeText(output.value);
-  alert("copied output to clipboard");
+  // alert("Copied text to clipboard!");
   // document.execCommand("copy");
 });

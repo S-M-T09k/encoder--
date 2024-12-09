@@ -5,6 +5,7 @@ html {
 
 body {
   color: #f1f6f2;
+  background-color: #212121;
   font-family: "Times New Roman", Times, serif, "Franklin Gothic Medium",
     "Arial Narrow", Arial, sans-serif;
 }
@@ -81,38 +82,6 @@ textarea {
 #keyInputArea input {
   width: 80vw;
   height: 75%;
-}
-
-#buttonsArea {
-  display: flex;
-  justify-content: space-evenly;
-  gap: 1em;
-}
-
-#buttonsArea button {
-  font-size: large;
-  padding: 5px;
-  border: solid 1px red;
-  border-radius: 5px;
-  color: red;
-  background-color: #000;
-  cursor: pointer;
-  transition: 1s;
-  width: 50%;
-}
-
-#buttonsArea button:active {
-  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px 0;
-  transform: translateY(2px);
-  background-color: #fff;
-  color: #000;
-  border: solid 1px #000;
-  transition: 25ms;
-}
-
-#copy {
-  font-size: 1em;
-  width: max-content;
 }
 
 #separator {

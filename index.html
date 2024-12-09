@@ -4,9 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Encoder</title>
-    <script src="./script.js" defer type="module"></script>
-    <script type="module" src="./encryption.js"></script>
+
+    <script src="./index.js" defer type="module"></script>
+    <script type="module" src="./scripts/encryption.js"></script>
+
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles/copyButton.css" />
+    <link rel="stylesheet" href="styles/encryptAndDecryptButtons.css" />
+
     <link
       rel="shortcut icon"
       href="./assets/secret-book-svgrepo-com.svg"
@@ -40,8 +45,16 @@
         </div>
 
         <div id="buttonsArea">
-          <button type="submit" id="encrypt">Encrypt</button>
-          <button type="submit" id="decrypt">Decrypt</button>
+          <button type="submit" id="encrypt">
+            <span class="shadow"></span>
+            <span class="edge"></span>
+            <span class="front text"> Encrypt </span>
+          </button>
+          <button type="submit" id="decrypt">
+            <span class="shadow"></span>
+            <span class="edge"></span>
+            <span class="front text"> Decrypt </span>
+          </button>
         </div>
       </section>
 
