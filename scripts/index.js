@@ -1,4 +1,5 @@
-import { encrypt, decrypt } from "./scripts/encryption.js";
+import { encrypt, decrypt } from "./encryption.js";
+import { inputValidation } from "./interactions.js";
 
 const initialInput = document.querySelector("#input");
 const keyInput = document.querySelector("#key");
@@ -11,12 +12,16 @@ encryptButton.addEventListener("click", () => {
   const message = initialInput.value.toString();
   const key = keyInput.value.toString();
 
+  inputValidation(initialInput, keyInput);
+
   output.value = encrypt(message, key);
 });
 
 decryptButton.addEventListener("click", () => {
   const message = initialInput.value.toString();
   const key = keyInput.value.toString();
+
+  inputValidation(initialInput, keyInput);
 
   output.value = decrypt(message, key);
 });
