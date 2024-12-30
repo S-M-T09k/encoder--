@@ -24,10 +24,6 @@ function decrypt(message, key) {
   let decrypted = "";
   let hexed_key = "";
 
-  if (!isHexadecimal(message)) {
-    return "invalid message";
-  }
-
   for (let i = 0; i < key.length; i++) {
     const hexCode = key[i].charCodeAt(0).toString(16);
     hexed_key += hexCode.padStart(2, "0");

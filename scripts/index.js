@@ -1,5 +1,5 @@
 import { encrypt, decrypt } from "./encryption.js";
-import { inputValidation } from "./interactions.js";
+import { inputIsEmpty, inputIsHexadecimal } from "./interactions.js";
 
 const initialInput = document.querySelector("#input");
 const keyInput = document.querySelector("#key");
@@ -12,18 +12,21 @@ encryptButton.addEventListener("click", () => {
   const message = initialInput.value.toString();
   const key = keyInput.value.toString();
 
-  inputValidation(initialInput, keyInput);
-
-  output.value = encrypt(message, key);
+  if (!inputIsEmpty(initialInput, keyInput)) {
+    output.value = encrypt(message, key);
+  }
 });
 
 decryptButton.addEventListener("click", () => {
   const message = initialInput.value.toString();
   const key = keyInput.value.toString();
 
-  inputValidation(initialInput, keyInput);
-
-  output.value = decrypt(message, key);
+  if (
+    !inputIsEmpty(initialInput, keyInput) &&
+    inputIsHexadecimal(initialInput)
+  ) {
+    output.value = decrypt(message, key);
+  }
 });
 
 copyButton.addEventListener("click", () => {
@@ -35,3 +38,5 @@ copyButton.addEventListener("click", () => {
   // alert("Copied text to clipboard!");
   // document.execCommand("copy");
 });
+
+const isHexadecimal = (str) => /^[A-F0-9]+$/i.test(str);

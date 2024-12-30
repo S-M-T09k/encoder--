@@ -20,27 +20,6 @@ body {
   padding: 0;
 }
 
-.header {
-  display: flex;
-  height: 3em;
-  padding-left: 0.5rem;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  flex-direction: row;
-  justify-content: start;
-  align-items: center;
-  background-color: #7fc;
-  color: #2600dd;
-}
-
-.header .separator {
-  width: 8px;
-  height: 100%;
-}
-
-.header small {
-  padding-top: 1em;
-}
-
 main section {
   margin-top: 2vh;
   display: flex;
